@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
-import image from "../../assets/images/image.png";
+import AuthImage from "../../assets/images/image.png";
 import { loginUser } from "../../../services/authService";
 
 const Login = () => {
@@ -160,7 +160,7 @@ const Login = () => {
       {/* Right Image Section */}
       <div className="hidden md:flex md:w-1/2 h-full items-center justify-center bg-[#1B1A1D]">
         <img
-          src={image}
+          src={AuthImage}
           alt="Login Visual"
           className="rounded-3xl max-w-[90%] max-h-[90%] object-contain -translate-x-20"
         />
