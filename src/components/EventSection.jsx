@@ -3,7 +3,7 @@ import iphone1 from '../assets/images/iphone1.png'
 import iphone2 from '../assets/images/iphone2.png'
 import appleicon from '../assets/images/apple-icon.svg'
 import googleplay from '../assets/images/google-play-icon.svg'
-// Could not resolve "../assets/images/iphone1.png" from "src/components/EventSection.jsx"
+
 const EventSection = () => {
     return (
         <section className="bg-[#1B1A1D] text-white py-40 overflow-hidden">
@@ -12,7 +12,7 @@ const EventSection = () => {
                 <div className="w-full md:w-1/2 text-center md:text-left mt-10 md:mt-0 px-6 md:px-20">
                     <h2 className="text-4xl md:text-5xl font-bold text-white mb-4 leading-tight">
                         Manage Events <br />
-                        <span className="text-white">On the Go!</span>
+                        <span className="text-white">On the go!</span>
                     </h2>
                     <p className="text-gray-300 mb-6">
                         From spontaneous meetups to high-profile events, <br className="hidden md:block" />
