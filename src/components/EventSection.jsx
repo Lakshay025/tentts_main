@@ -3,7 +3,7 @@ import iphone1 from '../assets/images/iphone1.png'
 import iphone2 from '../assets/images/iphone2.png'
 import appleicon from '../assets/images/apple-icon.svg'
 import googleplay from '../assets/images/google-play-icon.svg'
-
+// Could not resolve "../assets/images/iphone1.png" from "src/components/EventSection.jsx"
 const EventSection = () => {
     return (
         <section className="bg-[#1B1A1D] text-white py-40 overflow-hidden">
