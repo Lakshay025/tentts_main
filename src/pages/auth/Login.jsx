@@ -32,7 +32,7 @@ const Login = () => {
       // Store user data in localStorage
       localStorage.setItem('user', JSON.stringify({
         username: formData.username,
-        token: response.token // assuming your API returns a token
+        token: response.token 
       }));
       
       navigate("/");

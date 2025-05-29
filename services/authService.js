@@ -1,6 +1,16 @@
 const API_BASE_URL = "https://tentts.com/gateway/api/v1";
 
-// Register function
+// 🔐 Helper to get Authorization headers
+export const getAuthHeaders = () => {
+  const token = localStorage.getItem("token");
+  return {
+    "Content-Type": "application/json",
+    Accept: "*/*",
+    Authorization: `Bearer ${token}`,
+  };
+};
+
+// 👤 Register function
 export const registerUser = async ({ name, email, password, mobileNumber }) => {
   try {
     const response = await fetch(`${API_BASE_URL}/user/signup`, {
@@ -14,7 +24,7 @@ export const registerUser = async ({ name, email, password, mobileNumber }) => {
         email,
         password,
         mobileNumber,
-        username: name, 
+        username: name,
         groupUser: true,
       }),
     });
@@ -30,7 +40,7 @@ export const registerUser = async ({ name, email, password, mobileNumber }) => {
   }
 };
 
-// Login function
+// 🔐 Login function
 export const loginUser = async ({ username, password }) => {
   try {
     const response = await fetch(`${API_BASE_URL}/user/login`, {
@@ -42,8 +52,8 @@ export const loginUser = async ({ username, password }) => {
       body: JSON.stringify({
         username,
         password,
-        deviceType: "true",  
-        deviceToken: "true", 
+        deviceType: "true",
+        deviceToken: "true",
       }),
     });
 
@@ -52,7 +62,12 @@ export const loginUser = async ({ username, password }) => {
       throw new Error(error.message || "Login failed");
     }
 
-    return await response.json();
+    const data = await response.json();
+
+    // ✅ Save token to localStorage
+    localStorage.setItem("token", data.responseBody.accessToken);
+
+    return data;
   } catch (err) {
     throw err;
   }
