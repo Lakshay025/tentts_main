@@ -76,7 +76,7 @@ const Login = () => {
 
           {error && (
             <div className="bg-red-500/10 border border-red-500 text-red-500 px-4 py-3 rounded-md">
-              {error}
+              Unable to login, Please try again later!
             </div>
           )}
 
@@ -117,7 +117,7 @@ const Login = () => {
               />
               <label htmlFor="remember">Remember Me</label>
             </div>
-            <Link to="/forgot-password" className="text-blue-400 hover:text-blue-300 transition-colors">
+            <Link to="/forget-password" className="text-blue-400 hover:text-blue-300 transition-colors">
               Forgot Password?
             </Link>
           </div>
